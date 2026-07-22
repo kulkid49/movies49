@@ -12,16 +12,16 @@ const MoodSelector = () => {
   const selectedMood = MOODS.find(m => m.id === mood);
 
   return (
-    <div className="relative z-30">
+    <div className="relative z-30 w-full md:w-64">
       <label className="block text-sm font-medium text-slate-400 mb-2">How are you feeling?</label>
       
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full sm:w-64 flex items-center justify-between glass-panel px-4 py-3 rounded-xl hover:bg-slate-700/50 transition-colors"
+        className="w-full flex items-center justify-between gap-3 glass-panel px-4 py-3 rounded-xl hover:bg-slate-700/50 transition-colors"
       >
-        <span className="flex items-center gap-2">
+        <span className="flex min-w-0 items-center gap-2">
           <Sparkles size={18} className={selectedMood ? "text-amber-400" : "text-slate-400"} />
-          <span className={selectedMood ? "text-white font-medium" : "text-slate-300"}>
+          <span className={clsx("truncate", selectedMood ? "text-white font-medium" : "text-slate-300")}>
             {selectedMood ? selectedMood.label : "Select a mood..."}
           </span>
         </span>
