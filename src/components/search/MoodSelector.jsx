@@ -12,7 +12,7 @@ const MoodSelector = () => {
   const selectedMood = MOODS.find(m => m.id === mood);
 
   return (
-    <div className="relative z-30 w-full md:w-64">
+    <div className={clsx("relative w-full md:w-64", isOpen ? "z-50" : "z-30")}>
       <label className="block text-sm font-medium text-slate-400 mb-2">How are you feeling?</label>
       
       <button
@@ -35,7 +35,7 @@ const MoodSelector = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="absolute top-full left-0 right-0 mt-2 p-2 glass-panel rounded-xl max-h-64 overflow-y-auto"
+            className="absolute top-full left-0 right-0 z-50 mt-2 p-2 glass-panel rounded-xl max-h-64 overflow-y-auto"
           >
             <div className="grid grid-cols-1 gap-1">
               {MOODS.map((m) => (
