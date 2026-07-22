@@ -17,7 +17,7 @@ const LanguageSelector = () => {
   );
 
   return (
-    <div className="relative z-40 w-full md:w-64">
+    <div className={clsx("relative w-full md:w-64", isOpen ? "z-40" : "z-20")}>
       <label className="block text-sm font-medium text-slate-400 mb-2">Preferred Language</label>
       
       <button
