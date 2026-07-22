@@ -17,16 +17,16 @@ const LanguageSelector = () => {
   );
 
   return (
-    <div className="relative z-40">
+    <div className="relative z-40 w-full md:w-64">
       <label className="block text-sm font-medium text-slate-400 mb-2">Preferred Language</label>
       
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full sm:w-64 flex items-center justify-between glass-panel px-4 py-3 rounded-xl hover:bg-slate-700/50 transition-colors"
+        className="w-full flex items-center justify-between gap-3 glass-panel px-4 py-3 rounded-xl hover:bg-slate-700/50 transition-colors"
       >
-        <span className="flex items-center gap-2">
+        <span className="flex min-w-0 items-center gap-2">
           <Globe size={18} className="text-slate-400" />
-          <span className="text-white font-medium">
+          <span className="truncate text-white font-medium">
             {selectedLanguage ? selectedLanguage.name : "Select language..."}
           </span>
         </span>

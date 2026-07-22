@@ -13,7 +13,7 @@ const TypeToggle = () => {
   ];
 
   return (
-    <div className="flex bg-slate-800/80 p-1 rounded-full border border-slate-700/50 backdrop-blur-sm w-fit mx-auto mb-8 relative">
+    <div className="flex w-full max-w-sm bg-slate-800/80 p-1 rounded-full border border-slate-700/50 backdrop-blur-sm sm:w-fit mx-auto mb-6 sm:mb-8 relative">
       {options.map((opt) => {
         const isSelected = contentType === opt.id;
         const Icon = opt.icon;
@@ -23,7 +23,7 @@ const TypeToggle = () => {
             key={opt.id}
             onClick={() => setContentType(opt.id)}
             className={clsx(
-              "relative px-6 py-2.5 rounded-full text-sm font-medium transition-colors z-10 flex items-center gap-2",
+              "relative flex-1 sm:flex-none justify-center px-4 sm:px-6 py-2.5 rounded-full text-sm font-medium transition-colors z-10 flex items-center gap-2",
               isSelected ? "text-white" : "text-slate-400 hover:text-slate-200"
             )}
           >
